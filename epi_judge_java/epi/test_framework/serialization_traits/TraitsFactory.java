@@ -18,25 +18,22 @@ public class TraitsFactory {
   private static final Map<Type, SerializationTrait> PRIMITIVE_TYPES_MAPPING;
 
   static {
-    PRIMITIVE_TYPES_MAPPING = new HashMap<>() {
-      {
-        put(String.class, new StringTrait());
-        put(Integer.class, new IntegerTrait());
-        put(int.class, new IntegerTrait());
-        put(Short.class, new ShortTrait());
-        put(short.class, new ShortTrait());
-        put(Long.class, new LongTrait());
-        put(long.class, new LongTrait());
-        put(Character.class, new CharacterTrait());
-        put(char.class, new CharacterTrait());
-        put(Boolean.class, new BooleanTrait());
-        put(boolean.class, new BooleanTrait());
-        put(Float.class, new FloatTrait());
-        put(float.class, new FloatTrait());
-        put(Double.class, new DoubleTrait());
-        put(double.class, new DoubleTrait());
-      }
-    };
+    PRIMITIVE_TYPES_MAPPING = new HashMap<>();
+    PRIMITIVE_TYPES_MAPPING.put(String.class, new StringTrait());
+    PRIMITIVE_TYPES_MAPPING.put(Integer.class, new IntegerTrait());
+      PRIMITIVE_TYPES_MAPPING.put(int.class, new IntegerTrait());
+      PRIMITIVE_TYPES_MAPPING.put(Short.class, new ShortTrait());
+      PRIMITIVE_TYPES_MAPPING.put(short.class, new ShortTrait());
+      PRIMITIVE_TYPES_MAPPING.put(Long.class, new LongTrait());
+      PRIMITIVE_TYPES_MAPPING.put(long.class, new LongTrait());
+      PRIMITIVE_TYPES_MAPPING.put(Character.class, new CharacterTrait());
+      PRIMITIVE_TYPES_MAPPING.put(char.class, new CharacterTrait());
+      PRIMITIVE_TYPES_MAPPING.put(Boolean.class, new BooleanTrait());
+      PRIMITIVE_TYPES_MAPPING.put(boolean.class, new BooleanTrait());
+      PRIMITIVE_TYPES_MAPPING.put(Float.class, new FloatTrait());
+      PRIMITIVE_TYPES_MAPPING.put(float.class, new FloatTrait());
+      PRIMITIVE_TYPES_MAPPING.put(Double.class, new DoubleTrait());
+      PRIMITIVE_TYPES_MAPPING.put(double.class, new DoubleTrait());
   }
 
   @SuppressWarnings("unchecked")

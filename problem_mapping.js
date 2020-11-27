@@ -1600,7 +1600,7 @@ problem_mapping = {
                 "total": 7
             },
             "Java: CollatzChecker.java": {
-                "passed": 0,
+                "passed": 7,
                 "total": 7
             },
             "Python: collatz_checker.py": {
@@ -2786,7 +2786,7 @@ problem_mapping = {
                 "total": 503
             },
             "Java: KthLargestElementInLongArray.java": {
-                "passed": 0,
+                "passed": 503,
                 "total": 503
             },
             "Python: kth_largest_element_in_long_array.py": {

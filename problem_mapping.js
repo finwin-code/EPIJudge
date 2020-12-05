@@ -6,7 +6,7 @@ problem_mapping = {
                 "total": 10001
             },
             "Java: CountBits.java": {
-                "passed": 0,
+                "passed": 10001,
                 "total": 10001
             },
             "Python: count_bits.py": {
@@ -962,7 +962,7 @@ problem_mapping = {
                 "total": 65
             },
             "Java: CircularQueue.java": {
-                "passed": 0,
+                "passed": 65,
                 "total": 65
             },
             "Python: circular_queue.py": {

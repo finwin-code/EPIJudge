@@ -4,27 +4,60 @@ import epi.test_framework.EpiUserType;
 import epi.test_framework.GenericTest;
 import epi.test_framework.TestFailure;
 
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
+import java.util.StringJoiner;
+
 public class CircularQueue {
 
   public static class Queue {
-    public Queue(int capacity) {}
+    Integer[] queue;
+    int count; // count of elements in queue
+    int first, last; // first and last of queue
+    private final int SCALING_FACTOR = 2;
+    public Queue(int capacity) {
+      if (capacity <= 0) throw new IllegalArgumentException("Queue capacity must be positive integer");
+      queue = new Integer[capacity];
+      count = 0;
+      first = 0;
+      last = 0; // last is exclusive.
+    }
     public void enqueue(Integer x) {
-      // TODO - you fill in here.
+      if (count == queue.length) {
+        ensureCapacity();
+      };
+      queue[last] = x;
+      last = (last + 1) % queue.length;
+      count++;
       return;
     }
     public Integer dequeue() {
-      // TODO - you fill in here.
-      return 0;
+      if (count == 0) throw new IllegalStateException("Queue is empty");
+      Integer result = queue[first];
+      first = (first + 1) % queue.length;
+      count--;
+      return result;
     }
     public int size() {
-      // TODO - you fill in here.
-      return 0;
+      return count;
     }
+
+    private void ensureCapacity() {
+      if (count < queue.length) return;
+      Collections.rotate(Arrays.asList(queue), -first);
+      first = 0;
+      last = queue.length;
+      queue = Arrays.copyOf(queue, queue.length * SCALING_FACTOR);
+    }
+
     @Override
     public String toString() {
-      // TODO - you fill in here.
-      return super.toString();
+      StringJoiner joiner = new StringJoiner(",", "[", "]");
+      for (int i = 0; i < count; i++) {
+        joiner.add(queue[(first + i) % queue.length].toString());
+      }
+      return joiner.toString();
     }
   }
   @EpiUserType(ctorParams = {String.class, int.class})

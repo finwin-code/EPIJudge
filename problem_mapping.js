@@ -664,7 +664,7 @@ problem_mapping = {
                 "total": 505
             },
             "Java: DeleteFromList.java": {
-                "passed": 0,
+                "passed": 457,
                 "total": 457
             },
             "Java: InsertInList.java": {
@@ -778,7 +778,7 @@ problem_mapping = {
                 "total": 306
             },
             "Java: DeleteKthLastFromList.java": {
-                "passed": 0,
+                "passed": 306,
                 "total": 306
             },
             "Python: delete_kth_last_from_list.py": {
